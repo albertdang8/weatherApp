@@ -1,7 +1,7 @@
 body {
     background-color: #F4EDED;
 }
-
+/* header */
 .custom-shape-divider-top-1678783955 {
     position: absolute;
     top: 0;
@@ -22,6 +22,7 @@ body {
     fill: #808F85;
 }
 
+/* footer */
 .custom-shape-divider-bottom-1678783754 {
     position: absolute;
     bottom: 0;
