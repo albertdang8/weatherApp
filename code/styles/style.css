@@ -1,0 +1,22 @@
+.searchCityContainer {
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    
+}
+
+input, button {
+    z-index: 1;
+    margin: 15px;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.titleArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* arbitrary value rn */
+}

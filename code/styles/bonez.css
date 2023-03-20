@@ -1,6 +1,9 @@
 body {
-    background-color: #F4EDED;
-}
+    background: radial-gradient(circle, #9fbec5 10%, transparent 11%);
+        background-size: 1em 1em;
+        background-color: #F4EDED;
+        opacity: 1
+} 
 /* header */
 .custom-shape-divider-top-1678783955 {
     position: absolute;
@@ -44,3 +47,4 @@ body {
 .custom-shape-divider-bottom-1678783754 .shape-fill {
     fill: #36827F;
 }
+
