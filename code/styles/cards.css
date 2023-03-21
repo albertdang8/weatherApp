@@ -7,6 +7,13 @@ main {
   font-family: "Roboto", sans-serif;
 }
 
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }  
+}
+
+
 .cardContainer {
   display: grid;
   grid-template-areas:
@@ -23,10 +30,11 @@ main {
   height: 16rem;
   border-radius: 10px;
   overflow: hidden;
-  cursor: pointer;
   position: relative;
   color: white;
   box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+  background-color: rgba(80, 139, 89, 0.8);;
+  color: black;
 }
 
 .uvIndex {
@@ -42,6 +50,19 @@ main {
   grid-area: card4;
 }
 
+.hourForecast {
+  grid-area: anchor;
+  width: calc(32rem + 20px);
+  height: 16rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+  background-color: rgba(177, 100, 122, 0.8);
+}
+
 .card {
   width: 16rem;
   height: 16rem;
@@ -51,6 +72,7 @@ main {
   position: relative;
   color: white;
   box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+  background-color: aliceblue;
 }
 
 .card img {
@@ -74,8 +96,7 @@ main {
   text-transform: uppercase;
 }
 
-.card p,
-.card a {
+.card p {
   position: absolute;
   opacity: 0;
   max-width: 80%;
@@ -86,19 +107,12 @@ main {
   inset: auto auto 80px 30px;
 }
 
-.card a {
-  inset: auto auto 40px 30px;
-  color: inherit;
-  text-decoration: none;
-}
-
 .card:hover h2 {
   inset: auto auto 220px 30px;
   transition: inset 0.3s ease-out;
 }
 
-.card:hover p,
-.card:hover a {
+.card:hover p {
   opacity: 1;
   transition: opacity 0.5s 0.1s ease-in;
 }
