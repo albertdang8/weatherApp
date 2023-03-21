@@ -18,7 +18,7 @@ input, button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* arbitrary value rn */
+    margin: 20px; /* arbitrary value rn */
 }
 
 .dateHeader {
