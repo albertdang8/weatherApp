@@ -10,49 +10,42 @@ main {
 @media screen and (max-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  }  
+  }
 }
-
 
 .cardContainer {
   display: grid;
   grid-template-areas:
-    "title title"
-    "card1 card2"
-    "card3 card4"
-    "anchor anchor";
+    "title title title"
+    "card1 card1 card2"
+    "card3 card4 card4"
+    "anchor anchor anchor";
   grid-gap: 20px;
 }
 
 .hiLo {
   grid-area: title;
-  width: calc(32rem + 20px);
+  /* width: calc(32rem + 20px); */
   height: 16rem;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
   color: white;
   box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
-  background-color: rgba(80, 139, 89, 0.8);;
-  color: black;
+  background-color: #366375;
+  color: #ffffff;
 }
 
-.uvIndex {
-  grid-area: card1;
-}
 .humidity {
   grid-area: card2;
 }
 .wind {
   grid-area: card3;
 }
-.riseSet {
-  grid-area: card4;
-}
 
 .hourForecast {
   grid-area: anchor;
-  width: calc(32rem + 20px);
+  /* width: calc(32rem + 20px); */
   height: 16rem;
   border-radius: 10px;
   overflow: hidden;
@@ -60,7 +53,7 @@ main {
   position: relative;
   color: white;
   box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
-  background-color: rgba(177, 100, 122, 0.8);
+  background-color: #bc6c25;
 }
 
 .card {
@@ -74,8 +67,16 @@ main {
   box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
   background-color: aliceblue;
 }
+.uvIndex {
+  grid-area: card1;
+  width: 32rem;
+}
+.riseSet {
+  grid-area: card4;
+  width: 32rem;
+}
 
-.card-content{
+.card-content {
   display: flex;
 }
 
