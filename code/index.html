@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="#" />
+    <link
+			href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+			rel="stylesheet"
+		/>
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/bonez.css" />
     <link rel="stylesheet" href="./styles/style.css" />
@@ -37,10 +41,12 @@
     </div>
 
     <main>
-      <div class="searchCityContainer">
-        <input type="text" placeholder="Find your City" />
-        <button>Search</button>
-      </div>
+      <form class="search">
+        <input type="text" placeholder="Find your City" class="search__input" />
+        <button type="button" class="search__button">
+          <i class="ri-search-2-line"></i>
+        </button>
+      </form>
       <div class="titleArea">
         <h1 id="dateHead" class="dateHeader">1/23/45</h1>
         <br />
