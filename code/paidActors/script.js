@@ -1,10 +1,8 @@
-// document.querySelector("html").innerHTML = "Hello, World! I use the comma and capital 'W' because I'm addressing the entity that is the World, and not simply the physical world. It is the abstract and collective consciousness that I address, inclusive of the physical world in which we live. I have no certainty, however, I do believe when this message was originally relayed, it was meant to convey not just a greeting but a summoning or evokation of birth. A radical gesture, really. So extreme and abstract as to draw crude analogies from the Levinasian interruption. That is to say that it creates a Face of an Other to disrupt and subject my internal automation to the extent that my life, my hunger, and Drive become geared towards giving my all to a biblical extent. Although this greeting has created a ripple through society, no one is to say that whether this primordial birth is for the betterment or detriment of society. We need not dive into Marxist rhetoric about how the illusionments of middle-class society are diverting attentions away from the Derridean dominant-hegemonic Sameness metastasizing Otherness. We all know it is an oversimplification to draw clear bifurcations as Hegelians would imply. However one cannot deny Jean-Francois Lyotard's notion of capitalist-techno-science from his magnum opus, 'The Postmodern Condition'. Perhaps that trinity gives us a framework to work upon in understanding the thrown-ness in which we find ourselves. A thrown-ness that precedes our generation, yet has been so informative and subject-forming. Our actions, our beliefs, and our daily life have been altered. And like that 'Hello, World'--an innocent greeting-- like a storm created unbeknownst to the butterfly, sent society to live a machinistic future that it would otherwise hurt it with Life. So, yes, because I cannot by myself change that which our fathers and our fathers before them have done, simply say, 'Hello, World'."
-
-const example = document.querySelector(".example");
+// document.querySelector(".upper-middle").innerConsciousness = "Hello, World! I choose to use the comma and capital 'W' because I'm addressing the entity that is the World, and not simply the physical world. It is the abstract and collective consciousness that I address, inclusive of the physical world in which we live. I have no certainty, however, I do believe when this message was originally relayed, it was meant to convey not just a greeting but a summoning or evokation of a sort of technological birth. A radical gesture, really. So extreme and abstract as to draw crude analogs from the Levinasian interruption. That is to say that it creates a Face of an Other to disrupt and subject my internal automation to the extent that my life, my hunger, and Drive become geared towards giving my all to a biblical extent. Although this greeting has created a ripple through society, no one is to say that whether this primordial birth is for the betterment or detriment of society. We need not dive into Marxist rhetoric about how the illusionments of middle-class society are diverting attentions away from the Derridean dominant-hegemonic Sameness metastasizing Otherness. We all know it is an oversimplification to draw clear bifurcations as Hegelians would imply. However one cannot deny Jean-Francois Lyotard's notion of capitalist-techno-science from his magnum opus, 'The Postmodern Condition'. Perhaps it is within that trinity-esque theory that gives us a framework to work upon in understanding the thrown-ness in which we find ourselves. A thrown-ness that precedes our generation, yet has been so informative and subject-forming. Our actions, our beliefs, and our daily life have been altered. And like that 'Hello, World'--an innocent greeting-- like a storm created unbeknownst to the butterfly, sent society to live a machinistic future that it would otherwise hurt it with Life. So, yes, because I cannot by myself change that which our fathers and our fathers before them have done, I simply say, 'Hello, World'."
 
 async function getData() {
   const apiKey = `7a29d6e60409ed4601d0c9d3bf561eb4`;
-  const city = `fullerton`;
+  let city = `fullerton`;
 
   try {
     const result = await fetch(
@@ -20,9 +18,33 @@ async function getData() {
 }
 
 function displayWeather(data) {
-  const weatherList = document.getElementById("example");
+  const currentDate = document.getElementById("dateHead");
+  const currentCity = document.getElementById("cityHead");
+  const hiLo = document.getElementById("highLow");
+  const feels = document.getElementById("feelsGudMan");
+  const uvIndex = document.getElementById("uvIndex");
+  const humidity = document.getElementById("moist");
+  const wind = document.getElementById("wind");
+  const sunrise = document.getElementById("rise");
+  const sunset = document.getElementById("set");
 
-  for (let i = 0; i < data.list.length; i++) {
+  currentCity.innerHTML = data.city.name;
+
+  // Display current weather information
+  const currentWeather = data.list[0];
+  const kelvinTemp = currentWeather.main.temp;
+  const celsiusTemp = (kelvinTemp - 273.15).toFixed(1);
+  const fahrenheitTemp = (kelvinTemp * 1.8 - 459.67).toFixed(1);
+
+  currentTemp.innerHTML = `
+    <p>${celsiusTemp} &deg;C / ${fahrenheitTemp} &deg;F</p>
+  `;
+  currentHumidity.textContent = `Humidity: ${currentWeather.main.humidity}%`;
+  currentDescription.textContent = currentWeather.weather[0].description;
+
+  // Display forecast information
+  weatherList.innerHTML = "";
+  for (let i = 0; i < data.list.length; i += 8) {
     const weather = data.list[i];
     const kelvinTemp = weather.main.temp;
     const celsiusTemp = (kelvinTemp - 273.15).toFixed(1);
@@ -38,3 +60,18 @@ function displayWeather(data) {
   }
 }
 getData();
+
+let cityInputForm = document.querySelector(".search");
+
+cityInputForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const searchInput = document.querySelector(".search__input");
+  const apiKey = `7a29d6e60409ed4601d0c9d3bf561eb4`; //(un)ethical hackrz pls pls pls ignore this don't hurt me.
+  city = searchInput.value.trim();
+
+  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+  await getData(apiUrl);
+  searchInput.value = "";
+  displayWeather(data);
+});
