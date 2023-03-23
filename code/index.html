@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="#" />
     <link
-			href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-			rel="stylesheet"
-		/>
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/bonez.css" />
     <link rel="stylesheet" href="./styles/style.css" />
@@ -69,8 +69,8 @@
               />
             </svg>
 
-            <h2>Today</h2>
-            <p>Feels like:</p>
+            <h2>Today: <span id="highLow">hilo</span></h2>
+            <p>Feels like: <span id="feelsGudMan">feelsLiek</span></p>
           </div>
         </div>
 
@@ -80,7 +80,7 @@
             alt="clear skies full hearts can't lose"
           />
           <div class="card-content">
-            <h2>Card Heading</h2>
+            <h2>UV Index</h2>
             <p>
               <svg
                 width="30"
@@ -92,8 +92,9 @@
                 <path
                   d="M13.75 1.25L16.7375 5.525C15.8125 5.1875 14.8 5 13.75 5C12.7 5 11.6875 5.1875 10.7625 5.525L13.75 1.25ZM2.92499 7.5L8.12499 7.0625C7.34918 7.7178 6.68987 8.49967 6.17499 9.375C5.62499 10.3 5.31249 11.25 5.13749 12.2375L2.92499 7.5ZM2.94999 20L5.14999 15.2875C5.51744 17.3031 6.56804 19.1307 8.12499 20.4625L2.94999 20ZM24.5625 7.5L22.35 12.2375C21.996 10.2135 20.9432 8.37771 19.375 7.05L24.5625 7.5ZM28.75 16.25H26.25C26.25 18.8125 25.275 21.375 23.325 23.325C22.3975 24.2558 21.2946 24.9936 20.0803 25.4957C18.8659 25.9977 17.564 26.2541 16.25 26.25V28.75C19.45 28.75 22.65 27.5 25.0875 25.0875C27.525 22.675 28.75 19.45 28.75 16.25ZM23.75 16.25H21.25C21.25 17.5 20.7625 18.8125 19.7875 19.7875C18.8125 20.7625 17.5 21.25 16.25 21.25V23.75C17.2354 23.7518 18.2115 23.5591 19.1223 23.1828C20.033 22.8065 20.8605 22.2541 21.5573 21.5573C22.2541 20.8605 22.8065 20.033 23.1828 19.1223C23.559 18.2115 23.7518 17.2354 23.75 16.25ZM13.75 10C15.8125 10 17.5 11.6875 17.5 13.75C17.5 15.8125 15.8125 17.5 13.75 17.5C11.6875 17.5 9.99999 15.8125 9.99999 13.75C9.99999 11.6875 11.6875 10 13.75 10ZM13.75 7.5C10.3 7.5 7.49999 10.3 7.49999 13.75C7.49999 17.2 10.3 20 13.75 20C17.2 20 20 17.2 20 13.75C20 10.3 17.2 7.5 13.75 7.5Z"
                   fill="black"
-                /></svg
-              >Sample Text
+                />
+              </svg>
+              <span id="uvIndex"></span>
             </p>
           </div>
         </div>
@@ -119,7 +120,7 @@
                   fill="black"
                 />
               </svg>
-              Sample Text
+              <span id="moist"></span>"
             </p>
           </div>
         </div>
@@ -147,7 +148,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              Sample Text
+              <span id="wind"></span>
             </p>
           </div>
         </div>
@@ -175,7 +176,8 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              Sample Text<svg
+              <span id="rise">Sunrise: </span>
+              <svg
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -190,7 +192,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              Sunset:
+              <span id="set">Sunset: </span>
             </p>
           </div>
         </div>
@@ -219,6 +221,7 @@
       </svg>
     </div>
 
+    <script src="./paidActors/cityInput.js"></script>
     <script src="./paidActors/script.js"></script>
   </body>
 </html>
