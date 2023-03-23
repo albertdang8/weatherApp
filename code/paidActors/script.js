@@ -63,7 +63,7 @@ function displayWeather(data) {
   currentDate.innerHTML = dateFormat
   currentCity.innerHTML = data.city.name;
   hiLo.innerHTML = `High: ${Math.round(maxTemp)}° Low: ${Math.round(minTemp)}°`;
-  // feels.innerHTML = data.
+  feels.innerHTML = `${Math.round(data.list[0].main.feels_like)}°`;
 
 };
 getData("Fullerton");
