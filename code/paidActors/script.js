@@ -2,6 +2,7 @@
 
 async function getData(city) {
   const apiKey = `7a29d6e60409ed4601d0c9d3bf561eb4`;
+  //(un)ethical hackrz pls pls pls ignore this don't hurt me. I need my API key, its very special to me.
 
   try {
     const result = await fetch(
@@ -26,61 +27,46 @@ function displayWeather(data) {
   const wind = document.getElementById("wind");
   const sunrise = document.getElementById("rise");
   const sunset = document.getElementById("set");
-  
-  const list = data.list;
-  const dateToFilter = list[0].dt_txt.slice(8,10)
+
+  const list = data.list; //list of objects with updated forcast every three hours.
+  const dateToFilter = list[0].dt_txt.slice(8, 10); //pulls today's date the object date is written like "YYYY-MM-DD HH:MM:SS", so DD is extracted
   const filteredList = list.filter((item) => {
-    const sliced = item.dt_txt.slice(8, 10)
+    //iterates through the object finding the 5 differing days [remember 5day,3hr forecast]
+    const sliced = item.dt_txt.slice(8, 10);
     if (sliced === dateToFilter) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
-  })
+  });
+
+  // console.log(filteredList);
+
+  //now we iterate thru the objects of the same date to find the largest maxTemp value
   const maxTemp = filteredList.reduce((toCompare, current) => {
-    const toReturn = Math.max(toCompare, current.main.temp_max)
-
-    return toReturn
-  }, -Infinity)
-  const minTemp = filteredList.reduce((acc, current) =>{
-    const toReturn = Math.min(acc, current.main.temp_min)
+    const toReturn = Math.max(toCompare, current.main.temp_max);
     return toReturn;
-  }, Infinity)
-  currentDate.innerHTML = data.city.sunrise;
+  }, -Infinity);
+
+  // same but inverse to find the lowest minTemp value
+  const minTemp = filteredList.reduce((acc, current) => {
+    const toReturn = Math.min(acc, current.main.temp_min);
+    return toReturn;
+  }, Infinity);
+
+  //I feel like Dr. Frankenstein up in this bizz slicing and dicing up objects to create my monstrosity of a project
+  let year = data.list[0].dt_txt.slice(0, 4);
+  let month = data.list[0].dt_txt.slice(5, 7);
+  let day = data.list[0].dt_txt.slice(8, 10);
+  let dateFormat = `${month}/${day}/${year}`;
+
+  currentDate.innerHTML = dateFormat
   currentCity.innerHTML = data.city.name;
-  hiLo.innerHTML = `High: ${maxTemp} Low: ${minTemp}`;
+  hiLo.innerHTML = `High: ${Math.round(maxTemp)}° Low: ${Math.round(minTemp)}°`;
+  // feels.innerHTML = data.
 
-  // Display current weather information
-  const currentWeather = data.list[0];
-  const kelvinTemp = currentWeather.main.temp;
-  const celsiusTemp = (kelvinTemp - 273.15).toFixed(1);
-  const fahrenheitTemp = (kelvinTemp * 1.8 - 459.67).toFixed(1);
-
-
-  // currentTemp.innerHTML = `
-  //   <p>${celsiusTemp} &deg;C / ${fahrenheitTemp} &deg;F</p>
-  // `;
-  // currentHumidity.textContent = `Humidity: ${currentWeather.main.humidity}%`;
-  // currentDescription.textContent = currentWeather.weather[0].description;
-
-  // // Display forecast information
-  //   weatherList.innerHTML = "";
-  //   for (let i = 0; i < data.list.length; i += 8) {
-  //     const weather = data.list[i];
-  //     const kelvinTemp = weather.main.temp;
-  //     const celsiusTemp = (kelvinTemp - 273.15).toFixed(1);
-  //     const fahrenheitTemp = (kelvinTemp * 1.8 - 459.67).toFixed(1);
-  //     const weatherElement = document.createElement("li");
-  //     weatherElement.innerHTML = `
-  //       <h3>${weather.dt_txt}</h3>
-  //       <p>Temperature: ${celsiusTemp} &deg;C / ${fahrenheitTemp} &deg;F</p>
-  //       <p>Humidity: ${weather.main.humidity}%</p>
-  //       <p>Description: ${weather.weather[0].description}</p>
-  //     `;
-  //     weatherList.appendChild(weatherElement);
-  //   }
-}
-getData('Fullerton');
+};
+getData("Fullerton");
 
 const cityInputForm = document.querySelector(".search");
 
@@ -88,7 +74,6 @@ cityInputForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const searchInput = document.querySelector(".search__input");
-  //(un)ethical hackrz pls pls pls ignore this don't hurt me.
   city = searchInput.value.trim();
   await getData(city);
   searchInput.value = "";
