@@ -10,7 +10,7 @@ async function getData(city) {
     );
     const data = await result.json();
     console.log(data); //object
-    //below add all the functions you want to format the site
+    //below add all the functions you(I) want to format the site
     displayWeather(data);
   } catch (error) {
     console.log("Error: ", error);
@@ -22,7 +22,7 @@ function displayWeather(data) {
   const currentCity = document.getElementById("cityHead");
   const hiLo = document.getElementById("highLow");
   const feels = document.getElementById("feelsGudMan");
-  const uvIndex = document.getElementById("uvIndex");
+  const visibility = document.getElementById("visibility");
   const humidity = document.getElementById("moist");
   const wind = document.getElementById("wind");
   const sunrise = document.getElementById("rise");
@@ -60,12 +60,17 @@ function displayWeather(data) {
   let day = data.list[0].dt_txt.slice(8, 10);
   let dateFormat = `${month}/${day}/${year}`;
 
-  currentDate.innerHTML = dateFormat
+  currentDate.innerHTML = dateFormat;
   currentCity.innerHTML = data.city.name;
   hiLo.innerHTML = `High: ${Math.round(maxTemp)}° Low: ${Math.round(minTemp)}°`;
   feels.innerHTML = `${Math.round(data.list[0].main.feels_like)}°`;
-
-};
+  visibility.innerHTML = `${data.list[0].visibility} miles.`; //insert cloud icon. find 'visibility' icon if you can instead of the uv one. Cloudiness by percentage will be data.list[0].clouds.all;
+  humidity.innerHTML = data.list[0].main.humidity + "%";
+  let windSpeed = data.list[0].wind.speed;
+  let windDeg = data.list[0].wind.deg;
+  let windGust = data.list[0].wind.gust;
+  wind.innerHTML = `${windSpeed} mph ${windDeg}° & gusts of ${windGust} mph`;
+}
 getData("Fullerton");
 
 const cityInputForm = document.querySelector(".search");

@@ -45,7 +45,6 @@ main {
 
 .hourForecast {
   grid-area: anchor;
-  /* width: calc(32rem + 20px); */
   height: 16rem;
   border-radius: 10px;
   overflow: hidden;
@@ -76,8 +75,11 @@ main {
   width: 32rem;
 }
 
-.card-content {
+.hiLo, .hourForecast {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card img {
