@@ -1,0 +1,43 @@
+.search {
+  display: inline-flex;
+  align-items: center;
+  background-image: linear-gradient(45deg, #5bc0be, #3a506b);
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 50px;
+}
+.search :is(input, button) {
+  background: transparent;
+  color: inherit;
+  border: none;
+  outline: none;
+}
+.search__input {
+  width: 0;
+  transition: width 0.5s;
+}
+.search__button {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: color 0.25s;
+}
+.search__button:hover {
+  color: #e3e3e3;
+}
+.search:focus-within input {
+  width: 200px;
+}
+::placeholder {
+  font: inherit;
+  color: #e3e3e3;
+}
+
+.searchContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

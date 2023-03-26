@@ -70,6 +70,21 @@ function displayWeather(data) {
   let windDeg = data.list[0].wind.deg;
   let windGust = data.list[0].wind.gust;
   wind.innerHTML = `${windSpeed} mph ${windDeg}° & gusts of ${windGust} mph`;
+  let sunriseTime = data.city.sunrise; //unix value because thats a fun arbitrary value. but then again AD and BC is equally so.
+  let sunsetTime = data.city.sunset;
+
+  function unixTimeToTimeString(timestamp) {
+    const date = new Date(timestamp * 1000);
+    const hours = date.getHours();
+    const minutes = "0" + date.getMinutes();
+    const seconds = "0" + date.getSeconds();
+    const amOrPm = hours >= 12 ? "PM" : "AM";
+    const formattedHours = hours % 12 || 12;
+    return `${formattedHours}:${minutes.substr(-2)}:${seconds.substr(-2)} ${amOrPm}`;
+  }
+  
+  sunrise.innerHTML = unixTimeToTimeString(sunriseTime);
+  sunset.innerHTML = unixTimeToTimeString(sunsetTime);
 }
 getData("Fullerton");
 
