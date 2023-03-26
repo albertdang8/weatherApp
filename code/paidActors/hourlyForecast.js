@@ -14,8 +14,9 @@ async function getData(city) {
 }
 
 function isItPronouncedDataOr(data) {
-  let cardsHtml = "";
   let objectList = data.list;
+  let cardsHtml = "";
+  let cardTemplate = ``
   objectList.forEach((card, index) => {
     const date = new Date(card.dt_txt);
     const dateString = `${date.getMonth() + 1}-${date.getDate()}`;

@@ -80,9 +80,11 @@ function displayWeather(data) {
     const seconds = "0" + date.getSeconds();
     const amOrPm = hours >= 12 ? "PM" : "AM";
     const formattedHours = hours % 12 || 12;
-    return `${formattedHours}:${minutes.substr(-2)}:${seconds.substr(-2)} ${amOrPm}`;
+    return `${formattedHours}:${minutes.substr(-2)}:${seconds.substr(
+      -2
+    )} ${amOrPm}`;
   }
-  
+
   sunrise.innerHTML = unixTimeToTimeString(sunriseTime);
   sunset.innerHTML = unixTimeToTimeString(sunsetTime);
 }
