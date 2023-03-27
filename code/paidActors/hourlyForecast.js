@@ -2,7 +2,7 @@
 
 async function getData(city) {
   const apiKey = `7a29d6e60409ed4601d0c9d3bf561eb4`;
-  const photoApi = `TDS2ZnsBwXIvsBAdjtz9TLvaivU3hK4GVdDi_-UTHDs`
+  const photoApi = `TDS2ZnsBwXIvsBAdjtz9TLvaivU3hK4GVdDi_-UTHDs`;
   try {
     const result = await fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`
@@ -40,7 +40,7 @@ function isItPronouncedDataOr(data) {
     let gust = objectList[index].wind.gust; //mph
 
     let hardCard = `<ul>
-    <li>Temp: ${temp}°F with a potential low of ${minTemp}° and a high of ${maxTemp}°.</li>
+    <li>Temp: ${temp}°F   ${minTemp}° | ${maxTemp}°.</li>
     <li>Weather: ${mainWeather} — <span class="smol">${mainDescription}.</li>
     <li>Wind: ${windSpeed}mph with potential gusts of ${gust}.</li>
     <li>Humidity: ${moistness}% Clouds: ${clouds}%</li>
@@ -51,18 +51,18 @@ function isItPronouncedDataOr(data) {
     const dateString = `${monthName}, ${date.getDate()}`;
     const timeString = format12HourTime(date.getHours(), date.getMinutes());
     cardsHtml += `<article class="accordion-panel">
-    <input id="accordion-question-${index}" name="accordion" type="radio" />
-    <label for="accordion-question-${index}">
-    <span>${timeString} ${dateString}</span>
-    <i class="ri-add-line open"></i>
-    <i class="ri-subtract-line close"></i>
+      <input id="accordion-question-${index}" name="accordion" type="radio" />
+        <label for="accordion-question-${index}">
+          <span>${timeString} ${dateString}</span>
+          <i class="ri-add-line open"></i>
+          <i class="ri-subtract-line close"></i>
         </label>
         <div class="accordion-body">
           <p class="accordion-answer">
-          ${hardCard}
+            ${hardCard}
           </p>
-          </div>
-          </article>`;
+        </div>
+    </article>`;
   });
   document.querySelector("#card-container").innerHTML = cardsHtml;
   //flourishing some silly goose code because i aint got no time for serious sally work at 4am.
