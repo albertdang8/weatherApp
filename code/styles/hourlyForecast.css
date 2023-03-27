@@ -17,6 +17,10 @@ body {
   background-color: #141416;
 }
 
+#xthru {
+  text-decoration: line-through;
+}
+
 /* ======================== */
 .container {
   max-width: 980px;
@@ -97,4 +101,12 @@ body {
 .accordion input:checked ~ .accordion-body .accordion-answer {
   opacity: 1;
   transform: scale(1);
+}
+
+li {
+  color: #f4f5f6;
+}
+
+.smol {
+  color:#3b71fe
 }

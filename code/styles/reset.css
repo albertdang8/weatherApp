@@ -1,22 +1,34 @@
-*, *::before, *::after {
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    font: inherit;
+  margin: 0;
+  padding: 0;
+  font: inherit;
 }
 
 body {
-    min-height: 100vh;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 
-img, picture, svg, video {
-    display: block;
-    max-width: 100%;
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
 }
 
-input, textarea, button, select {
-    font: inherit;
+input,
+textarea,
+button,
+select {
+  font: inherit;
 }
