@@ -101,5 +101,3 @@ cityInputForm.addEventListener("submit", async (e) => {
   await getData(city);
   searchInput.value = "";
 });
-
-

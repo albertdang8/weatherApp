@@ -14,7 +14,10 @@
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  background-color: #141416;
+  background: radial-gradient(circle, #9fbec5 10%, transparent 11%);
+        background-size: 1em 1em;
+        background-color: #F4EDED;
+        opacity: 1
 }
 
 #xthru {
@@ -30,7 +33,7 @@ body {
 
 .title {
     font-size: clamp(26px, 5vw, 40px);
-    color: #fff;
+    color: #14213d;
     margin-bottom: 30px;
 }
 
@@ -39,6 +42,7 @@ body {
     margin-bottom: 24px;
     border: 1px solid #777e91;
     border-radius: 8px;
+    background-color: #BC6C25;
 }
 
 .accordion input {
@@ -51,18 +55,18 @@ body {
     justify-content: space-between;
     column-gap: 15px;
     padding-block: 7px;
-    color: #f4f5f6;
+    color: #FFFFFF;
     cursor: pointer;
     transition: color 0.25s;
 }
 
 .accordion label:hover,
 .accordion input:checked + label {
-    color: #3b71fe;
+    color: #FFFFFF;
 }
 
 .accordion i {
-    color: #3b71fe;
+    color: #FFFFFF;
 }
 
 .accordion .close {
@@ -85,7 +89,7 @@ body {
 
 .accordion-answer {
     font-size: 14px;
-    color: #777e91;
+    color: #FFFFFF;
     padding-top: 5px;
     padding-bottom: 7px;
     opacity: 0;
@@ -108,5 +112,5 @@ li {
 }
 
 .smol {
-  color:#3b71fe
+  font-size: 90%;
 }
