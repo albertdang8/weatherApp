@@ -10,8 +10,7 @@ async function getData(city) {
       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`
     );
     const data = await result.json();
-    console.log(data); //object
-    //below add all the functions you(I) want to format the site
+    console.log(data);
     displayWeather(data);
   } catch (error) {
     console.log("Error: ", error);
@@ -44,8 +43,8 @@ function displayWeather(data) {
   // console.log(filteredList);
 
   //now we iterate thru the objects of the same date to find the largest maxTemp value
-  const maxTemp = filteredList.reduce((toCompare, current) => {
-    const toReturn = Math.max(toCompare, current.main.temp_max);
+  const maxTemp = filteredList.reduce((acc, current) => {
+    const toReturn = Math.max(acc, current.main.temp_max);
     return toReturn;
   }, -Infinity);
 
@@ -89,7 +88,7 @@ function displayWeather(data) {
   sunrise.innerHTML = unixTimeToTimeString(sunriseTime);
   sunset.innerHTML = unixTimeToTimeString(sunsetTime);
 }
-getData("Fullerton");
+getData("fullerton");
 
 const cityInputForm = document.querySelector(".search");
 

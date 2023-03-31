@@ -1,0 +1,13 @@
+.startedAtTheBottom {
+    background-color : #226f54;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border-color: #87c38f;
+  }
+  
+  #mybutton {
+    position: fixed;
+    bottom: -4px;
+    right: 10px;
+  }

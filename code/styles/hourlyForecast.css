@@ -20,10 +20,26 @@ body {
         opacity: 1
 }
 
-#xthru {
+#xthru {  /*its comedy sweaty, you wouldn't get it*/
   text-decoration: line-through;
 }
 
+.straighten {
+    display: flex;
+    align-items: center;
+}
+
+.boopRight {
+    margin-right: 10px;
+}
+
+.boopLeft {
+    margin-left: 10px;
+}
+
+.searchContainer {
+    margin-top: 50px;
+}
 /* ======================== */
 .container {
     max-width: 980px;
