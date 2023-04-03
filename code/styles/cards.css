@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap");
 
 main {
@@ -8,12 +7,6 @@ main {
   align-items: center;
   padding: 50px;
   font-family: "Poppins", sans-serif;
-}
-
-@media screen and (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  }
 }
 
 .cardContainer {
@@ -28,15 +21,14 @@ main {
 
 .hiLo {
   grid-area: title;
-  /* width: calc(32rem + 20px); */
   height: 16rem;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  color: white;
   box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
   background-color: #366375;
   color: #ffffff;
+  font-size: 2rem;
 }
 
 .humidity {
@@ -50,6 +42,8 @@ main {
   grid-area: anchor;
   height: 16rem;
   border-radius: 10px;
+  font-size: 1.25rem;
+  font-weight: 500;
   overflow: hidden;
   cursor: pointer;
   position: relative;
@@ -78,7 +72,8 @@ main {
   width: 32rem;
 }
 
-.hiLo, .hourForecast {
+.hiLo,
+.hourForecast {
   display: flex;
   flex-direction: column;
   justify-content: center;

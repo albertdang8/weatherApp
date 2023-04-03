@@ -62,7 +62,7 @@ function displayWeather(data) {
 
   currentDate.innerHTML = dateFormat;
   currentCity.innerHTML = data.city.name;
-  hiLo.innerHTML = `High: ${Math.round(maxTemp)}° Low: ${Math.round(minTemp)}°`;
+  hiLo.innerHTML = `High: ${Math.round(maxTemp)}° | Low: ${Math.round(minTemp)}°`;
   feels.innerHTML = `${Math.round(data.list[0].main.feels_like)}°`;
   visibility.innerHTML = `${data.list[0].visibility} miles.`; //insert cloud icon. find 'visibility' icon if you can instead of the uv one. Cloudiness by percentage will be data.list[0].clouds.all;
   humidity.innerHTML = data.list[0].main.humidity + "%";
