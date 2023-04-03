@@ -95,7 +95,7 @@ function format12HourTime(hours, minutes) {
   return `${formattedHours}:${formattedMinutes} ${ampm}`;
 }
 
-getData("London");
+getData("");
 
 const cityInputForm = document.querySelector(".search");
 
