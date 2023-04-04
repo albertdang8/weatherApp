@@ -33,6 +33,10 @@ body {
 .searchContainer {
     margin-top: 50px;
 }
+
+.cardTitle {
+    font-weight: 500;
+}
 /* ======================== */
 .container {
     max-width: 980px;
