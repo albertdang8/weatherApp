@@ -18,7 +18,7 @@ const weatherSvg = `<svg class = "boopRight" width="15" height="15" viewBox="0 0
 
 async function getData(city) {
   const apiKey = `7a29d6e60409ed4601d0c9d3bf561eb4`;
-  const photoApi = `TDS2ZnsBwXIvsBAdjtz9TLvaivU3hK4GVdDi_-UTHDs`;
+  // const photoApi = `TDS2ZnsBwXIvsBAdjtz9TLvaivU3hK4GVdDi_-UTHDs`;
   try {
     const result = await fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`
@@ -56,7 +56,7 @@ function isItPronouncedDataOr(data) {
     let gust = objectList[index].wind.gust; //mph
 
     let hardCard = `<ul>
-    <li class="straighten">${sunnySvg} Temp: ${temp}°F   <span class="smol boopLeft">${minTemp}° | ${maxTemp}°</span>.</li>
+    <li class="straighten">${sunnySvg} Temp: ${temp}°F   <span class="smol boopLeft">${minTemp}° | ${maxTemp}°</span></li>
     <li class="straighten">${weatherSvg} Weather: ${mainWeather} — <span class="smol boopLeft">${mainDescription}</span>.</li>
     <li class="straighten">${windSvg} Wind: ${windSpeed}<span class = "smol boopRight">mph</span> with potential gusts of ${gust}.</li>
     <li class="straighten">${moistSvg} Humidity: ${moistness}% Clouds: ${clouds}%</li>
@@ -95,7 +95,7 @@ function format12HourTime(hours, minutes) {
   return `${formattedHours}:${formattedMinutes} ${ampm}`;
 }
 
-getData("london");
+getData("");
 
 const cityInputForm = document.querySelector(".search");
 
