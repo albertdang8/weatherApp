@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="#"> <!--this is to shut up the browser warning-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" />
+    <!--this is to shut up the browser warning-->
     <title id="cityTitle">3 Hour Forecast</title>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
-    >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap">
-    <link rel="stylesheet" href="./styles/homeButton.css">
-    <link rel="stylesheet" href="./styles/hourlyForecast.css">
-    <link rel="stylesheet" href="./styles/searchBar.css">
-    <link rel="stylesheet" href="./styles/bonez.css">
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap"
+    />
+    <link rel="stylesheet" href="./styles/homeButton.css" />
+    <link rel="stylesheet" href="./styles/hourlyForecast.css" />
+    <link rel="stylesheet" href="./styles/searchBar.css" />
+    <link rel="stylesheet" href="./styles/bonez.css" />
   </head>
   <body>
     <div class="custom-shape-divider-top-1678783955">
@@ -46,13 +50,13 @@
           type="text"
           placeholder="Find another City"
           class="search__input"
-        >
-        <button type="button" class="search__button">
+        />
+        <button type="submit" class="search__button">
           <i class="ri-search-2-line"></i>
         </button>
       </form>
     </div>
-    <div><a href="index.html"  class="homeButton">Home</a></div>
+    <div><a href="index.html" class="homeButton">Home</a></div>
     <section class="container">
       <div class="accordion">
         <h2 class="title">3-hour Forecast<span id="cityHead"></span></h2>
@@ -63,7 +67,7 @@
               name="accordion"
               type="radio"
               checked
-            >
+            />
             <label for="accordion-question">
               <span>If you can see this...</span>
               <i class="ri-add-line open"></i>
@@ -94,8 +98,10 @@
       </svg>
     </div>
     <div id="mybutton">
-      <button class="startedAtTheBottom" onclick="nowWeHere()">Back to top</button>
-      </div>
+      <button class="startedAtTheBottom" onclick="nowWeHere()">
+        Back to top
+      </button>
+    </div>
     <script src="./paidActors/hourlyForecast.js"></script>
   </body>
 </html>
