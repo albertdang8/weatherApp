@@ -88,7 +88,7 @@ function displayWeather(data) {
   sunrise.innerHTML = unixTimeToTimeString(sunriseTime);
   sunset.innerHTML = unixTimeToTimeString(sunsetTime);
 }
-getData("");
+getData("fullerton");
 
 const cityInputForm = document.querySelector(".search");
 
