@@ -1,3 +1,6 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap");
+
 main {
   display: flex;
   flex-direction: column;
@@ -5,6 +8,12 @@ main {
   align-items: center;
   padding: 50px;
   font-family: "Poppins", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
 }
 
 .cardContainer {
@@ -19,14 +28,15 @@ main {
 
 .hiLo {
   grid-area: title;
+  /* width: calc(32rem + 20px); */
   height: 16rem;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  color: white;
   box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
   background-color: #366375;
-  color: #FFFFFF;
-  font-size: 2rem;
+  color: #ffffff;
 }
 
 .humidity {
@@ -40,15 +50,12 @@ main {
   grid-area: anchor;
   height: 16rem;
   border-radius: 10px;
-  font-size: 1.25rem;
-  font-weight: 500;
   overflow: hidden;
   cursor: pointer;
   position: relative;
-  color: #FFFFFF;
+  color: white;
   box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
   background-color: #bc6c25;
-  text-decoration: none;
 }
 
 .card {
@@ -71,8 +78,7 @@ main {
   width: 32rem;
 }
 
-.hiLo,
-.hourForecast {
+.hiLo, .hourForecast {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,16 +96,14 @@ main {
   transition: opacity 0.2s ease-out;
 }
 
-.cardTitle {
+.card h2 {
   position: absolute;
   inset: auto auto 30px 30px;
   margin: 0;
   transition: inset 0.3s 0.3s ease-out;
   font-family: "Poppins", sans-serif;
-  font-weight: bold;
+  font-weight: normal;
   text-transform: uppercase;
-  /* I'm using text-shadow to emulate some sort of text-stroke */
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .card p {
@@ -107,12 +111,10 @@ main {
   opacity: 0;
   max-width: 80%;
   transition: opacity 0.3s ease-out;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  font-size: 1.25rem;
 }
 
 .card p {
-  inset: auto auto 50px 30px;
+  inset: auto auto 80px 30px;
 }
 
 .card:hover h2 {

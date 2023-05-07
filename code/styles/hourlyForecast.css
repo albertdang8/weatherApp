@@ -1,3 +1,10 @@
+/* ======================== */
+/* 
+    Ignore the following styles. They are not important to achieve the effect.
+    I'm only using them for looks (overall page background/font styles/centering content).
+*/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -32,10 +39,6 @@ body {
 
 .searchContainer {
     margin-top: 50px;
-}
-
-.cardTitle {
-    font-weight: 500;
 }
 /* ======================== */
 .container {
