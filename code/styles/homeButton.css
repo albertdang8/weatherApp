@@ -1,3 +1,15 @@
+.homeButton {
+  background-color: #226f54;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+
+/* scroll to top button */
 .startedAtTheBottom {
     background-color : #226f54;
     color: white;
